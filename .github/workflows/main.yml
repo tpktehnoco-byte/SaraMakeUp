@@ -1,0 +1,28 @@
+# Ime skripta
+name: Sync to Sara Repo
+
+# Kada da se pokrene? - Svaki put kad se desi PUSH u 'main' granu
+on:
+  push:
+    branches: [ "main" ]
+
+# Poslovi koje treba obaviti
+jobs:
+  mirror-sync:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Preuzmi kod sa trenutnog repa (tpktehnoco)
+      - name: Checkout source code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Preuzmi celu istoriju
+
+      # 2. Poveži se na drugi rep (sara) i pošalji kod
+      - name: Mirror to Sara Account
+        uses: wei/curl@master
+        with:
+          args: >
+            -X POST
+            -H "Authorization: token ${{ secrets.SARA_TOKEN }}"
+            -H "Accept: application/vnd.github.v3+json"
+            https://api.github.com/repos/paintedbysaraa/make-up/git/refs
