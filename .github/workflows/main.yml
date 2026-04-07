@@ -19,10 +19,8 @@ jobs:
 
       # 2. Poveži se na drugi rep (sara) i pošalji kod
       - name: Mirror to Sara Account
-        uses: wei/curl@master
-        with:
-          args: >
-            -X POST
-            -H "Authorization: token ${{ secrets.SARA_TOKEN }}"
-            -H "Accept: application/vnd.github.v3+json"
-            https://github.com/paintedbysaraa/make-up.git
+        run: |
+          git config --global user.name "tpktehnoco"
+          git config --global user.email "tpktehnoco@users.noreply.github.com"
+          git remote add mirror https://x-access-token:${{ secrets.SARA_TOKEN }}@github.com/paintedbysaraa/make-up.git
+          git push mirror main --force
