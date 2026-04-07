@@ -560,7 +560,7 @@ function handleFormSubmit(event) {
     event.preventDefault();
     console.log("Form submission started.");
 
-    const serviceID = "service_aq2wive";
+    const serviceID = "service_709y3uf";
     const templateID = "template_6y889t8";
 
     const successDiv = document.getElementById('success-message');
