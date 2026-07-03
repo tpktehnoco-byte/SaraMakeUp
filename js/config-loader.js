@@ -25,10 +25,18 @@ let lastFocusedElement;
 const API_KEY = 'AIzaSyC0vpKBRl6jL7CzRFWU1STXJopGt4u86Io';
 const ROOT_FOLDER_ID = '1yBKwuMbTD4Qjy-UVnKtb2qigX98y8sUA';
 const CATEGORY_MAP = {
-    'Studio Shooting Make-Up': 'studio-shooting',
-    'Shooting Make-Up': 'photoshoot',
-    'Bridal Make-Up': 'bridal',
-    'Event Make-Up': 'event'
+    'YAGU': 'YAGU', 
+    'Victory_Autobiography_Viktoriya_Zayika': 'Victory_Autobiography_Viktoriya_Zayika',
+    'Urban_Lights': 'Urban_Lights',
+    'Short_Movie_Just_Thoughts': 'Short_Movie_Just_Thoughts',
+    'Shooting_Retreat': 'Shooting_Retreat',
+    'Metropolis': 'Metropolis',
+    'FW_Nürnberg_2025': 'FW_Nuernberg_2025', 
+    'Feminine_Force': 'Feminine_Force',
+    'Elemental_Kin_Scorpio_Jin_Magazine': 'Elemental_Kin_Scorpio_Jin_Magazine',
+    'Delicate_Force_Seline_Magazine': 'Delicate_Force_Seline_Magazine',
+    'Bridal_Make-Up': 'Bridal_Make-Up',
+    'AMD_Show_2025_MAN_Truck_Forum': 'AMD_Show_2025_MAN_Truck_Forum'
 };
 /**
  * Kreira HTML element sa zadatim atributima i sadržajem.
@@ -466,17 +474,24 @@ async function initializePortfolio() {
 }
 function renderMasonryGallery(images) {
     if (!dyn) return;
-
     // Gradimo HTML unutar kontejnera
     let html = `
             <h2 data-translate-key="portfolio.title">Portfolio</h2>
             <div class="portfolio-filters" role="group" aria-label="Portfolio filtern">
-                <button class="filter-btn active" data-filter="all" data-translate-key="portfolio.filterAll">Alle</button>
-                <button class="filter-btn" data-filter="bridal" data-translate-key="portfolio.filterBridal">Bridal Make-Up</button>
-                <button class="filter-btn" data-filter="photoshoot" data-translate-key="portfolio.filterPhotoshoot">Shooting Make-Up</button>
-                <button class="filter-btn" data-filter="event" data-translate-key="portfolio.filterEvent">Event Make-Up</button>
-                <button class="filter-btn" data-filter="studio-shooting" data-translate-key="portfolio.filterStudio">Studio Shooting Make-Up</button>
-            </div>
+    <button class="filter-btn active" data-filter="all" data-translate-key="portfolio.filterAll">Alle</button>
+    <button class="filter-btn" data-filter="Victory_Autobiography_Viktoriya_Zayika" data-translate-key="portfolio.Victory_Autobiography_Viktoriya_Zayika">Victory Autobiography Viktoriya Zayika</button>
+    <button class="filter-btn" data-filter="YAGU" data-translate-key="portfolio.YAGU">YAGU</button>
+    <button class="filter-btn" data-filter="Urban_Lights" data-translate-key="portfolio.Urban_Lights">Urban Lights</button>
+    <button class="filter-btn" data-filter="Short_Movie_Just_Thoughts" data-translate-key="portfolio.Short_Movie_Just_Thoughts">Short Movie Just Thoughts</button>
+    <button class="filter-btn" data-filter="Shooting_Retreat" data-translate-key="portfolio.Shooting_Retreat">Shooting Retreat</button>
+    <button class="filter-btn" data-filter="Metropolis" data-translate-key="portfolio.Metropolis">Metropolis</button>
+    <button class="filter-btn" data-filter="FW_Nuernberg_2025" data-translate-key="portfolio.FW_Nuernberg_2025">FW Nürnberg 2025</button>
+    <button class="filter-btn" data-filter="Feminine_Force" data-translate-key="portfolio.Feminine_Force">Feminine Force</button> <!-- DODATO -->
+    <button class="filter-btn" data-filter="Elemental_Kin_Scorpio_Jin_Magazine" data-translate-key="portfolio.Elemental_Kin_Scorpio_Jin_Magazine">Elemental Kin Scorpio Jin Magazine</button>
+    <button class="filter-btn" data-filter="Delicate_Force_Seline_Magazine" data-translate-key="portfolio.Delicate_Force_Seline_Magazine">Delicate Force Seline Magazine</button>
+    <button class="filter-btn" data-filter="Bridal_Make-Up" data-translate-key="portfolio.Bridal_Make-Up">Bridal Make-Up</button>
+    <button class="filter-btn" data-filter="AMD_Show_2025_MAN_Truck_Forum" data-translate-key="portfolio.AMD_Show_2025_MAN_Truck_Forum">AMD Show 2025 MAN Truck Forum</button>
+</div>
             <div class="portfolio-grid">
         `;
 
